@@ -1,0 +1,3 @@
+[submodule "app/data/cv"]
+	path = app/data/cv
+	url = git@github.com:grenade/cv.git
