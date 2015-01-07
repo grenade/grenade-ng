@@ -351,14 +351,25 @@ ul.skills li.kibana,
 ul.technologies li.kibana {
   list-style-image: url(../images/bullet-kibana.png);
 }
-ul.skills li.exadata,
-ul.technologies li.exadata {
-  list-style-image: url(../images/bullet-exadata.png);
+ul.skills li.db,
+ul.technologies li.db {
+  list-style-image: url(../images/bullet-db.png);
 }
-
-
-
-
+ul.skills li.java,
+ul.technologies li.java {
+  list-style-image: url(../images/bullet-java.png);
+}
+ul.skills li.php,
+ul.technologies li.php {
+  list-style-image: url(../images/bullet-php.png);
+}
+ul.skills li.report,
+ul.technologies li.report {
+  list-style-image: url(../images/bullet-report.png);
+}
+li.uop {
+  list-style-image: url(../images/uop.png);
+}
 
 
 /* Responsive: Portrait tablets and up */
