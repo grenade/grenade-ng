@@ -21,16 +21,29 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl',
+        activeRoute: 'home'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/objective', {
+        templateUrl: 'views/objective.html',
+        controller: 'ObjectiveCtrl',
+        activeRoute: 'objective'
       })
       .when('/experience', {
         templateUrl: 'views/experience.html',
-        controller: 'ExperienceCtrl'
+        controller: 'ExperienceCtrl',
+        activeRoute: 'experience'
+      })
+      .when('/education', {
+        templateUrl: 'views/education.html',
+        controller: 'EducationCtrl',
+        activeRoute: 'education'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        activeRoute: 'contact'
       })
       .otherwise({
         redirectTo: '/'

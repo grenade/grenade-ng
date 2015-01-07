@@ -20,23 +20,46 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <div class="avatar pull-left" style="background-image: url(images/rob.jpg); margin-right: 10px;"></div>
-        <h3 class="text-muted">grenade</h3>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="avatar pull-left" style="background-image: url(images/rob.jpg); margin-right: 10px;"></div>
+          <a class="navbar-brand" ng-href="#/">Rob Thijssen - CV</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right" ng-controller="NavCtrl">
+            <li ng-class="{active:isActive('objective')}">
+              <a ng-href="#/objective">Objective</a>
+            </li>
+            <li ng-class="{active:isActive('experience')}">
+              <a ng-href="#/experience">Experience</a>
+            </li>
+            <li ng-class="{active:isActive('education')}">
+              <a ng-href="#/education">Education</a>
+            </li>
+            <li ng-class="{active:isActive('contact')}">
+              <a ng-href="#/contact">Contact</a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
+    </nav>
 
+    <div class="container-fluid">
       <div ng-view=""></div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+      <hr />
+
+      <footer>
+        <p>&copy; Rob Thijssen 2015</p>
+      </footer>
+    </div> <!-- /container -->
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -80,15 +103,19 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/showdown/src/showdown.js"></script>
     <script src="bower_components/angular-markdown-directive/markdown.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/nav.js"></script>
+        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/objective.js"></script>
         <script src="scripts/controllers/experience.js"></script>
+        <script src="scripts/controllers/education.js"></script>
+        <script src="scripts/controllers/contact.js"></script>
         <!-- endbuild -->
 </body>
 </html>

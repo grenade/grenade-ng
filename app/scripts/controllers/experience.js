@@ -10,16 +10,20 @@
 angular.module('grenadeApp')
   .controller('ExperienceCtrl', function ($scope, $http) {
     var experienceFiles = [
-      'data/cv/bis.json',
-      'data/cv/ihs.json',
-      'data/cv/beazley.json',
+      'data/cv/rwe.json',
       'data/cv/maersk.json',
-      'data/cv/rwe.json'
+      'data/cv/beazley.json',
+      'data/cv/ihs.json',
+      'data/cv/bis.json'
     ];
-    $scope.experiences = [];
+    var experiences = [];
     for (var i = experienceFiles.length - 1; i >= 0; i--) {
       $http.get(experienceFiles[i]).success(function(data) {
-        $scope.experiences.push(data);
+        experiences.push(data);
+        if (experiences.length === experienceFiles.length) {
+          experiences.sort(function(a,b) { return b.period.start.localeCompare(a.period.start); } );
+          $scope.experiences = experiences;
+        }
       });
-    };
+    }
   });
