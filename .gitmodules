@@ -1,3 +1,6 @@
 [submodule "app/data/cv"]
-	path = app/data/cv
-	url = git@github.com:grenade/cv.git
+  path = app/data/cv
+  url = git@github.com:grenade/cv.git
+[submodule "dist"]
+  path = dist
+  url = git@github.com:grenade/grenade.github.io.git
