@@ -16,9 +16,9 @@ describe('Controller: ExperienceCtrl', function () {
     });
   }));
 
-  /*
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+
+  it('should attach a list of experiences to the scope', function () {
+    expect(scope.experiences.length).toBe(17);
   });
-  */
+
 });
