@@ -10,6 +10,7 @@
 angular.module('grenadeApp')
   .controller('ExperienceCtrl', function ($scope, $http) {
     var experienceFiles = [
+      'data/cv/mozilla.json',
       'data/cv/bis.json',
       'data/cv/ihs.json',
       'data/cv/beazley.json',
