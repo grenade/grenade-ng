@@ -1,9 +1,22 @@
+sudo: false
 language: node_js
 before_install:
-  - gem install sass compass
+- gem install sass compass
 node_js:
-  - '0.10'
+- iojs
+- '0.12'
+- '0.10'
 before_script:
-  - 'npm install -g bower grunt-cli'
-  - 'bower install'
-  - 'grunt build'
+- npm install -g bower grunt-cli
+- bower install
+script:
+- grunt build
+- bash ./publish.sh
+env:
+  global:
+  - GIT_NAME: Travis-CI
+  - GIT_EMAIL: rthijssen@gmail.com
+  - GH_REF: github.com/grenade/grenade.github.io.git
+  - GH_PAGES_BRANCH: master
+  - GH_PAGES_SUBDIR: cv
+  - secure: IH0EloafyybmchX2OWvxqc1yYbBwZ0v+SOoa6VhDCZN71ggPdj20KBWX1htX48VglhGGRo8ViuXkM8t4UPvi4nm34dO483saGqs7pZfxqZhqDv2UXr/wFeN1SBw43rXS8PrXRvXHxzWc1PQh+h7R2p8YeoinLfhQr5n8s7CnAhM=
