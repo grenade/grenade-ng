@@ -12,7 +12,7 @@ script:
 - bash ./publish.sh
 env:
   global:
-  - GIT_NAME: "Travis CI"
+  - GIT_NAME: 'Travis CI'
   - GIT_EMAIL: builds@travis-ci.org
   - GH_REF: github.com/grenade/grenade.github.io.git
   - GH_PAGES_BRANCH: master
