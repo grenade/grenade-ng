@@ -11,7 +11,12 @@
 angular
   .module('grenadeApp', [
     'ngAnimate',
-    'ngRoute'
+    'ngCookies',
+    'ngMessages',
+    'ngResource',
+    'ngRoute',
+    'ngSanitize',
+'ngTouch'
   ])
   .config(function ($routeProvider) {
     $routeProvider
