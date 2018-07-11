@@ -32,12 +32,14 @@ angular.module('grenadeApp')
     ];
     var experiences = [];
     for (var i = experienceFiles.length - 1; i >= 0; i--) {
-      $http.get(cv_url + experienceFiles[i]).success(function(data) {
-        experiences.push(data);
-        if (experiences.length === experienceFiles.length) {
-          experiences.sort(function(a,b) { return b.period.start.localeCompare(a.period.start); } );
-          $scope.experiences = experiences;
+      $http.get(cv_url + experienceFiles[i]).then(
+        function(data) {
+          experiences.push(data.data);
+          if (experiences.length === experienceFiles.length) {
+            experiences.sort(function(a,b) { return b.period.start.localeCompare(a.period.start); } );
+            $scope.experiences = experiences;
+          }
         }
-      });
+      );
     }
   });
