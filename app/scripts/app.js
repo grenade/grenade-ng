@@ -11,7 +11,6 @@
 angular
   .module('grenadeApp', [
     'ngAnimate',
-    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
