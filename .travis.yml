@@ -5,7 +5,8 @@ node_js:
 before_install:
 - npm config set registry http://registry.npmjs.org/
 - npm install -g bower grunt-cli generator-angular generator-karma grunt-karma yo
-- rvm install 2.0.0
+- rvm install 2.2
+- gem install rb-inotify -v 0.9.10
 - gem install sass compass
 before_script:
 - npm install
