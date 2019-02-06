@@ -1,19 +1,14 @@
 <div class="container" style="margin-top: 40px;">
   <h2>Rob Thijssen <small>Curriculum Vitae</small></h2>
   <p>
-    These pages host my up-to-date CV. Other formats for placement agencies are available here:
+    These pages host my <a href="https://github.com/grenade/grenade-ng/commits/master" style="text-decoration: none;">up-to-date</a> CV.
+    Other formats for placement agencies are available here:
   </p>
   <ul style="list-style-type: none;">
-    <li>
-      <a href="https://goo.gl/E3oMcS" style="text-decoration: none;">
-        <img src="images/ms-word.svg" style="width: 20px; height: 20px; border: 0;"/>
-        Robin Thijssen - Curriculum Vitae.docx
-      </a>
-    </li>
-    <li>
-      <a href="https://goo.gl/2xNZ2U" style="text-decoration: none;">
-        <img src="images/pdf.png" style="width: 20px; height: 20px; border: 0;"/>
-        Robin Thijssen - Curriculum Vitae.pdf
+    <li ng-repeat="cvdoc in [{ ext: 'docx', link: 'https://goo.gl/E3oMcS' }, { ext: 'pdf', link: 'https://goo.gl/2xNZ2U' } ]">
+      <a ng-href="{{cvdoc.link}}" style="text-decoration: none;">
+        <img ng-src="https://raw.githubusercontent.com/grenade/grenade-ng/master/app/images/{{cvdoc.ext}}.png" style="width: 20px; height: 20px; border: 0;"/>
+        Robin Thijssen - Curriculum Vitae.{{cvdoc.ext}}
       </a>
     </li>
   </ul>
