@@ -3,7 +3,8 @@ language: node_js
 node_js:
   - node
 before_install:
-- npm install -g npm bower grunt-cli
+- npm config set registry http://registry.npmjs.org/
+- npm install -g bower grunt-cli generator-angular generator-karma grunt-karma yo
 - rvm install 2.0.0
 - gem install sass compass
 before_script:
@@ -11,7 +12,13 @@ before_script:
 - bower update
 script:
 - grunt build
-- bash ./publish.sh
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: ./publish.sh
+  on:
+    branch: master
+    condition: "$TRAVIS_PULL_REQUEST = false"
 env:
   global:
   - GIT_NAME: Travis-CI
