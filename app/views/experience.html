@@ -5,9 +5,9 @@
       </div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h4 class="timeline-title">
+          <h3 class="timeline-title">
             {{experience.company.name}}
-          </h4>
+          </h3>
           <p class="small text-muted" ng-show="experience.location.name">
           <i class="glyphicon glyphicon-map-marker"></i>
           <span>{{experience.location.name}}</span>
@@ -19,21 +19,32 @@
             <span ng-show="experience.period.end">{{experience.period.end | date:'MMMM yyyy'}}</span>
             <em ng-hide="experience.period.end">present</em>
           </p>
-          <h5>{{experience.job.title}}</h5>
+          <h4>{{experience.job.title}}</h4>
           <p><em>{{experience.job.description}}</em></p>
         </div>
         <div class="timeline-body">
           <p ng-repeat="paragraph in experience.job.brief">{{paragraph}}</p>
+
           <ul class="links" ng-show="experience.job.links">
-            <li ng-repeat="link in experience.job.links">
-              <a href="{{link}}">{{link}}</a>
+            <li ng-repeat="link in experience.job.links" class="{{link.class}}">
+              <a href="{{link.href}}" alt="{{link.title}}" title="{{link.title}}">
+                {{link.text}}
+              </a>
             </li>
           </ul>
+
+          <h4 ng-show="experience.job.technologies">
+            Technology, platform, language and tools
+          </h4>
           <ul class="technologies">
             <li ng-repeat="technology in experience.job.technologies" class="{{technology.code}}">
             	{{technology.description}}
             </li>
           </ul>
+
+          <h4 ng-show="experience.job.skills">
+            Skills and experience
+          </h4>
           <ul class="skills">
             <li ng-repeat="skill in experience.job.skills" class="{{skill.code}}">
               {{skill.description}}
