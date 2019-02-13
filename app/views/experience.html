@@ -24,6 +24,11 @@
         </div>
         <div class="timeline-body">
           <p ng-repeat="paragraph in experience.job.brief">{{paragraph}}</p>
+          <ul class="links" ng-show="experience.job.links">
+            <li ng-repeat="link in experience.job.links">
+              <a href="{{link}}">{{link}}</a>
+            </li>
+          </ul>
           <ul class="technologies">
             <li ng-repeat="technology in experience.job.technologies" class="{{technology.code}}">
             	{{technology.description}}
