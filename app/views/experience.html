@@ -25,7 +25,7 @@
         <div class="timeline-body">
           <p ng-repeat="paragraph in experience.job.brief">{{paragraph}}</p>
 
-          <ul class="links" ng-show="experience.job.links">
+          <ul class="links" ng-show="experience.job.links.length">
             <li ng-repeat="link in experience.job.links" class="{{link.class}}">
               <a href="{{link.href}}" alt="{{link.title}}" title="{{link.title}}">
                 {{link.text}}
@@ -34,7 +34,7 @@
             </li>
           </ul>
 
-          <h4 ng-show="experience.job.technologies">
+          <h4 ng-show="experience.job.technologies.length">
             Technology, platform, language and tools
           </h4>
           <ul class="technologies">
@@ -43,7 +43,7 @@
             </li>
           </ul>
 
-          <h4 ng-show="experience.job.skills">
+          <h4 ng-show="experience.job.skills.length">
             Skills and experience
           </h4>
           <ul class="skills">
