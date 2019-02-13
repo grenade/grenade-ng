@@ -392,6 +392,14 @@ ul.skills li.hg,
 ul.technologies li.hg {
   list-style-image: url(../images/bullet-hg.png);
 }
+ul.skills li.docker,
+ul.technologies li.docker {
+  list-style-image: url(../images/bullet-docker.png);
+}
+ul.skills li.terraform,
+ul.technologies li.terraform {
+  list-style-image: url(../images/bullet-terraform.png);
+}
 li.uop {
   list-style-image: url(../images/uop.png);
 }
